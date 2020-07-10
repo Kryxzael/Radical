@@ -13,7 +13,17 @@ MonoBehaviour:
   m_Name: Walk
   m_EditorClassIdentifier: 
   Frames:
-  - Sprite: {fileID: 0}
+  - Sprite: {fileID: -2311659948842064771, guid: 5032ba5cdcb94ce4592e2c014984b610,
+      type: 3}
+    FrameTimeMultiplier: 1
+  - Sprite: {fileID: 7364682651488144517, guid: 5032ba5cdcb94ce4592e2c014984b610,
+      type: 3}
+    FrameTimeMultiplier: 1
+  - Sprite: {fileID: -6287787046888575383, guid: 5032ba5cdcb94ce4592e2c014984b610,
+      type: 3}
+    FrameTimeMultiplier: 1
+  - Sprite: {fileID: 7364682651488144517, guid: 5032ba5cdcb94ce4592e2c014984b610,
+      type: 3}
     FrameTimeMultiplier: 1
   FrameTime: 1
-  FrameTimeDivider: 60
+  FrameTimeDivider: 10
