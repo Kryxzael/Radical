@@ -36,7 +36,7 @@ namespace Assets.Radical.GUI
 
             //Fall in
             {
-                OnBegin();
+                yield return OnBegin();
 
                 Vector3 targetPosition = transform.position;
                 transform.position += Vector3.up * FallLength;
@@ -56,8 +56,9 @@ namespace Assets.Radical.GUI
             }
 
             //Wait
-            OnSustain();
+            yield return OnSustainStart();
             yield return new WaitForSecondsRealtime(SustainLength);
+            yield return OnSustainEnd();
 
             //Fall out
             {
@@ -73,7 +74,7 @@ namespace Assets.Radical.GUI
                     lerpTime += FallSpeed;
                 }
 
-                OnEnd();
+                yield return OnEnd();
             }
         }
 
@@ -82,7 +83,12 @@ namespace Assets.Radical.GUI
             yield break;
         }
 
-        protected virtual IEnumerator OnSustain()
+        protected virtual IEnumerator OnSustainStart()
+        {
+            yield break;
+        }
+
+        protected virtual IEnumerator OnSustainEnd()
         {
             yield break;
         }

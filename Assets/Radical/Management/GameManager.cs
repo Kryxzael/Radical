@@ -17,7 +17,6 @@ namespace Assets.Radical.Management
         public TMP_Text ScoreToastPrefab;
 
         [Header("Lifetime")]
-        public GameObject Canvas;
         public GameObject GameOverOverlayPrefab;
 
 
@@ -40,8 +39,10 @@ namespace Assets.Radical.Management
                 return;
 
             IsGameRunning = false;
-            GameObject gameOverScreen = Instantiate(GameOverOverlayPrefab, Vector2.zero, Quaternion.identity, Canvas.transform);
+            GameObject gameOverScreen = Instantiate(GameOverOverlayPrefab, Vector2.zero, Quaternion.identity);
             gameOverScreen.transform.localPosition = new Vector3();
+
+            ResultsConduit.PreviousState = new ResultsConduit(Score);
         }
 
     }

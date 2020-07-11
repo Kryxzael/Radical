@@ -474,7 +474,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-62238
+  m_Name: pb_Mesh81592
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1055,7 +1055,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh23556
+  m_Name: pb_Mesh81568
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1218,7 +1218,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-60142
+  m_Name: pb_Mesh81616
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3007,8 +3007,7 @@ MonoBehaviour:
   Score: 0
   ScoreToastPrefab: {fileID: 5056656545436434368, guid: 27e11831a9e2da649bb274b2ed890041,
     type: 3}
-  Canvas: {fileID: 535860527}
-  GameOverOverlayPrefab: {fileID: 497129908261202311, guid: 767e1a4d2cb690c4e97168612d0e47c0,
+  GameOverOverlayPrefab: {fileID: 4927043046159441997, guid: 394a138eb575f0b46b81e6b9ede5a8bb,
     type: 3}
 --- !u!4 &1523219631
 Transform:
@@ -3409,7 +3408,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-67280
+  m_Name: pb_Mesh81604
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3584,7 +3583,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-66300
+  m_Name: pb_Mesh81540
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3916,7 +3915,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-64886
+  m_Name: pb_Mesh81658
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4352,7 +4351,7 @@ PrefabInstance:
     - target: {fileID: 8970737739543208407, guid: dbb3c96f0657fd542a5ce6ff3063f116,
         type: 3}
       propertyPath: HasShield
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8970737739543208413, guid: dbb3c96f0657fd542a5ce6ff3063f116,
         type: 3}
