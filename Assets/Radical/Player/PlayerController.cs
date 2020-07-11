@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.Radical.General;
+using Assets.Radical.Management;
 using UnityEngine;
 
 namespace Assets.Radical.Player
@@ -18,6 +19,7 @@ namespace Assets.Radical.Player
         private Rigidbody _rigidbody;
         private Collider _collider;
         private DirectionManager _directionManager;
+        private GameManager _gameManager;
 
         [Header("Movement")]
         public float MoveSpeed;
@@ -38,12 +40,17 @@ namespace Assets.Radical.Player
             _rigidbody = GetComponent<Rigidbody>();
             _collider = GetComponent<Collider>();
             _directionManager = GetComponent<DirectionManager>();
+
+            _gameManager = FindObjectOfType<GameManager>();
         }
 
         private void Update()
         {
-            HandleMoveInput();
-            UpdateAnimation();
+            if (_gameManager.IsGameRunning)
+            {
+                HandleMoveInput();
+                UpdateAnimation();
+            }
         }
 
         /// <summary>

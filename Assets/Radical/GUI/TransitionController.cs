@@ -13,6 +13,8 @@ namespace Assets.Radical.GUI
     {
         public string[] SplashTexts;
 
+        public AnimationCurve DropClip;
+
         public float FallLength = 30;
         public float FallSpeed;
         public float SustainLength;
@@ -42,7 +44,7 @@ namespace Assets.Radical.GUI
                 float lerpTime = 0f;
                 while (lerpTime < 1f)
                 {
-                    transform.position = Vector3.Lerp(originalPosition, targetPosition, lerpTime);
+                    transform.position = Vector3.Lerp(originalPosition, targetPosition, DropClip.Evaluate(lerpTime));
 
                     yield return new WaitForEndOfFrame();
                     lerpTime += FallSpeed;
@@ -50,8 +52,9 @@ namespace Assets.Radical.GUI
 
                 transform.position = targetPosition;
             }
-            
+
             //Wait
+            OnSustain();
             yield return new WaitForSecondsRealtime(SustainLength);
 
             //Fall out
@@ -69,5 +72,21 @@ namespace Assets.Radical.GUI
                 }
             }
         }
+
+        protected virtual IEnumerator OnBegin()
+        {
+            yield break;
+        }
+
+        protected virtual IEnumerator OnSustain()
+        {
+            yield break;
+        }
+
+        protected virtual IEnumerator OnEnd()
+        {
+            yield break;
+        }
+
     }
 }
