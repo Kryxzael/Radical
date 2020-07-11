@@ -7,15 +7,23 @@ using UnityEngine;
 
 namespace Assets.Radical.Items
 {
+    [RequireComponent(typeof(SpriteRenderer))]
     public abstract class ItemPickup : MonoBehaviour
     {
-        public abstract Item Item { get; }
+        private SpriteRenderer _renderer;
+
+        private void Awake()
+        {
+            _renderer = GetComponent<SpriteRenderer>();
+        }
+
+        public abstract Item CreateItem(Sprite sprite);
 
         private void OnTriggerEnter(Collider other)
         {
             if (other.GetComponent<ItemHolder>() is ItemHolder holder)
             {
-                holder.HeldItem = Item;
+                holder.HeldItem = CreateItem(_renderer.sprite);
                 Destroy(gameObject);
             }
         }
