@@ -9,13 +9,15 @@ using UnityEngine.SceneManagement;
 
 namespace Assets.Radical.GUI
 {
-    public class GameOverTransitionController : TransitionController
+    public class SceneTransitionController : TransitionController
     {
+        public string TargetScene;
+
         protected override IEnumerator OnSustainEnd()
         {
             DontDestroyOnLoad(transform.root);
 
-            SceneManager.LoadScene("Results");
+            SceneManager.LoadScene(TargetScene);
 
             yield break;
         }
