@@ -17,6 +17,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 300
       objectReference: {fileID: 0}
+    - target: {fileID: 5911075605685359988, guid: 53cffe96a87243e4b9d2190842f29be8,
+        type: 3}
+      propertyPath: SplashTexts.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5911075605685359988, guid: 53cffe96a87243e4b9d2190842f29be8,
+        type: 3}
+      propertyPath: SplashTexts.Array.data[4]
+      value: Whack!
+      objectReference: {fileID: 0}
     - target: {fileID: 5911075605685359994, guid: 53cffe96a87243e4b9d2190842f29be8,
         type: 3}
       propertyPath: m_Name

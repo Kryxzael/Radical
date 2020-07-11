@@ -18,27 +18,31 @@ namespace Assets.Radical.Player
 
         private Rigidbody _rigidbody;
         private Collider _collider;
+        private Renderer _renderer;
         private DirectionManager _directionManager;
         private GameManager _gameManager;
+
+        public bool IsInvincible;
 
         [Header("Movement")]
         public float MoveSpeed;
         public float JumpHeight;
 
-        [Header("Speed boosting")]
+        [Header("Power ups")]
         public bool Boosting;
         public float BoostSpeedMultiplier = 1.5f;
         public float BoostDuration = 2f;
+        public bool HasShield;
 
         [Header("Animations")]
         public TwosidedSpriteAnimation IdleAnimation;
         public TwosidedSpriteAnimation WalkAnimation;
 
-
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
             _collider = GetComponent<Collider>();
+            _renderer = GetComponent<Renderer>();
             _directionManager = GetComponent<DirectionManager>();
 
             _gameManager = FindObjectOfType<GameManager>();
@@ -95,6 +99,28 @@ namespace Assets.Radical.Player
                 Boosting = true;
                 yield return new WaitForSeconds(BoostDuration);
                 Boosting = false;
+            }
+        }
+
+        public void GrantInvincibilityFrames(float time)
+        {
+            StartCoroutine(CoInvincibilityFrames());
+
+            IEnumerator CoInvincibilityFrames()
+            {
+                IsInvincible = true;
+
+                DateTime targetTime = DateTime.Now.AddSeconds(time);
+
+                while (DateTime.Now < targetTime)
+                {
+                    _renderer.enabled = false;
+                    yield return new WaitForEndOfFrame();
+                    _renderer.enabled = true;
+                    yield return new WaitForEndOfFrame();
+                }
+
+                IsInvincible = false;
             }
         }
     }

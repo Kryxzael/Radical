@@ -38,6 +38,7 @@ public class SpriteAnimator : MonoBehaviour
         StopAllCoroutines();
         if (_animation == null || _animation.FrameCount == 0)
         {
+            _spriteRenderer.sprite = null;
             return;
         }
 

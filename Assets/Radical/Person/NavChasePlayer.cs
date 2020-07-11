@@ -14,6 +14,9 @@ namespace Assets.Radical.Person
     [RequireComponent(typeof(NavMeshAgent))]
     public class NavChasePlayer : TriggerableComponent
     {
+        public const float BREAK_SHIELD_IFRAMES = 2f;
+
+
         private PlayerController _target;
         private GameManager _gameManager;
 
@@ -36,8 +39,22 @@ namespace Assets.Radical.Person
 
         private void OnTriggerEnter(Collider other)
         {
-            if (IsTriggered && other.GetComponent<PlayerController>() is PlayerController)
+            if (IsTriggered && other.GetComponent<PlayerController>() is PlayerController pl)
+            {
+                if (pl.IsInvincible)
+                    return;
+
+                if (pl.HasShield)
+                {
+                    pl.HasShield = false;
+                    pl.GrantInvincibilityFrames(BREAK_SHIELD_IFRAMES);
+                    return;
+                }
+
+
                 _gameManager.GameOver();
+            }
+                
         }
     }
 }
