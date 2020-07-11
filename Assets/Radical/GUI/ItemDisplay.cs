@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Assets.Radical.Items;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Assets.Radical.Items
+namespace Assets.Radical.GUI
 {
     [RequireComponent(typeof(Image))]
     public class ItemDisplay : MonoBehaviour
