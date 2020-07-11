@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace Assets.Radical.Player
 {
+    [RequireComponent(typeof(Rigidbody), typeof(Collider), typeof(DirectionManager))]
     public class PlayerController : MonoBehaviour
     {
         /*
@@ -16,24 +17,22 @@ namespace Assets.Radical.Player
 
         private Rigidbody _rigidbody;
         private Collider _collider;
-        private SpriteAnimator _animator;
-        private SpriteRenderer _renderer;
+        private DirectionManager _directionManager;
 
         [Header("Movement")]
         public float MoveSpeed;
         public float JumpHeight;
 
         [Header("Animations")]
-        public SpriteAnimation IdleAnimation;
-        public SpriteAnimation WalkAnimation;
+        public TwosidedSpriteAnimation IdleAnimation;
+        public TwosidedSpriteAnimation WalkAnimation;
 
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
             _collider = GetComponent<Collider>();
-            _animator = GetComponent<SpriteAnimator>();
-            _renderer = GetComponent<SpriteRenderer>();
+            _directionManager = GetComponent<DirectionManager>();
         }
 
         private void Update()
@@ -64,21 +63,12 @@ namespace Assets.Radical.Player
         /// </summary>
         private void UpdateAnimation()
         {
-            //Direction
-            if (_rigidbody.velocity.x > 0)
-                _renderer.flipX = false;
-
-            else if (_rigidbody.velocity.x < 0)
-                _renderer.flipX = true;
-
-
-
             //Animation
             if (Mathf.Abs(_rigidbody.velocity.x) > 0 || Mathf.Abs(_rigidbody.velocity.z) > 0)
-                _animator.Animation = WalkAnimation;
+                _directionManager.Animation = WalkAnimation;
 
             else
-                _animator.Animation = IdleAnimation;
+                _directionManager.Animation = IdleAnimation;
         }
     }
 }
