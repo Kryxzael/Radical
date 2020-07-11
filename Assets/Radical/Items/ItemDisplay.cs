@@ -28,6 +28,7 @@ namespace Assets.Radical.Items
                 enabled = false;
             }
 
+            _image.enabled = Source.HeldItem != null;
             _image.sprite = Source.HeldItem?.UISprite;
         }
     }
