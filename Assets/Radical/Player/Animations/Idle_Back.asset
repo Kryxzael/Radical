@@ -9,8 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc334c0912396154c82f0526c6703b3c, type: 3}
-  m_Name: Walk
+  m_Script: {fileID: 11500000, guid: c5a9ea0abb4f982429d1c1ee5dbcee1d, type: 3}
+  m_Name: Idle_Back
   m_EditorClassIdentifier: 
-  Front: {fileID: 11400000, guid: 64f811d5831f4fd408ed9067d84ee49b, type: 2}
-  Back: {fileID: 11400000, guid: 5dc13df5c663a3f44a25d9fd46229cca, type: 2}
+  Frames:
+  - Sprite: {fileID: 7364682651488144517, guid: a03f7e046d120c948b9f492d97cda540,
+      type: 3}
+    FrameTimeMultiplier: 1
+  FrameTime: 1
+  FrameTimeDivider: 60

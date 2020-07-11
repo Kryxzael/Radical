@@ -36,6 +36,8 @@ namespace Assets.Radical.GUI
 
             //Fall in
             {
+                OnBegin();
+
                 Vector3 targetPosition = transform.position;
                 transform.position += Vector3.up * FallLength;
 
@@ -70,6 +72,8 @@ namespace Assets.Radical.GUI
                     yield return new WaitForEndOfFrame();
                     lerpTime += FallSpeed;
                 }
+
+                OnEnd();
             }
         }
 
