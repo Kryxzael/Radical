@@ -23,6 +23,11 @@ namespace Assets.Radical.Player
         public float MoveSpeed;
         public float JumpHeight;
 
+        [Header("Speed boosting")]
+        public bool Boosting;
+        public float BoostSpeedMultiplier = 1.5f;
+        public float BoostDuration = 2f;
+
         [Header("Animations")]
         public TwosidedSpriteAnimation IdleAnimation;
         public TwosidedSpriteAnimation WalkAnimation;
@@ -48,9 +53,9 @@ namespace Assets.Radical.Player
         {
             //Horizontal movement
             _rigidbody.velocity = new Vector3(
-                x: Input.GetAxisRaw(MOVE_AXIS_HORIZONTAL) * MoveSpeed,
+                x: Input.GetAxisRaw(MOVE_AXIS_HORIZONTAL) * MoveSpeed * (Boosting ? BoostSpeedMultiplier : 1f),
                 y: _rigidbody.velocity.y,
-                z: Input.GetAxisRaw(MOVE_AXIS_VERTICAL) * MoveSpeed
+                z: Input.GetAxisRaw(MOVE_AXIS_VERTICAL) * MoveSpeed * (Boosting ? BoostSpeedMultiplier : 1f)
             );
 
             //Jump
@@ -69,6 +74,21 @@ namespace Assets.Radical.Player
 
             else
                 _directionManager.Animation = IdleAnimation;
+        }
+
+        /// <summary>
+        /// Temporarily increases the speed of the player
+        /// </summary>
+        public void ActivateSpeedBoost()
+        {
+            StartCoroutine(speedBoost());
+
+            IEnumerator speedBoost()
+            {
+                Boosting = true;
+                yield return new WaitForSeconds(BoostDuration);
+                Boosting = false;
+            }
         }
     }
 }

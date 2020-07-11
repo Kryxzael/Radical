@@ -29,13 +29,6 @@ namespace Assets.Radical.Person
             _renderer.color = UntriggeredColor;
         }
 
-        protected override void UpdateTriggered()
-        {
-            base.UpdateTriggered();
-
-            Debug.Log(GetComponent<Rigidbody>().velocity);
-        }
-
         public override void OnTriggered()
         {
             base.OnTriggered();

@@ -23,7 +23,7 @@ namespace Assets.Radical.Player
 
         private void Update()
         {
-            if (Input.GetButtonDown("Fire3"))
+            if (Input.GetButtonDown("Fire"))
                 UseAirhorn();
         }
 
