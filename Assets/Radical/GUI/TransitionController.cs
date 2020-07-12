@@ -76,6 +76,8 @@ namespace Assets.Radical.GUI
 
                 yield return OnEnd();
             }
+
+            Destroy(transform.root.gameObject);
         }
 
         protected virtual IEnumerator OnBegin()

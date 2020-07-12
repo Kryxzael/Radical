@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Radical/Scenes/SampleScene.unity
+    path: Assets/Radical/Scenes/MainMenu.unity
+    guid: 48b78dd771a55754196a6c32d034361a
+  - enabled: 1
+    path: Assets/Radical/Scenes/GameScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Radical/Scenes/Results.unity
