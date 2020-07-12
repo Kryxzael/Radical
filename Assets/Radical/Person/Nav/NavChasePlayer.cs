@@ -19,6 +19,7 @@ namespace Assets.Radical.Person
         private PlayerController _target;
         private NavMeshAgent _nav;
         private PatrolPoint[] _patrolPoints;
+        private PersonSpawner _spawnNext;
 
         public NavigationDecision CurrentDecision;
         public string CurrentDecisionName;
@@ -39,6 +40,8 @@ namespace Assets.Radical.Person
         private void Awake()
         {
             _patrolPoints = FindObjectsOfType<PatrolPoint>();
+            _spawnNext = FindObjectOfType<PersonSpawner>();
+
             _target = FindObjectOfType<PlayerController>();
             _nav = GetComponent<NavMeshAgent>();
 
@@ -65,6 +68,7 @@ namespace Assets.Radical.Person
             base.OnTriggered();
 
             Stun();
+            _spawnNext.SpawnNew();
         }
 
         protected override void UpdateTriggered()

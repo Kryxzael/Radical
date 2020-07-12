@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 7386339436071824614}
   - component: {fileID: 396082215218841784}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: Enemy Stage1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ MonoBehaviour:
   IsStunned: 0
   ChaseMinDuration: 5
   ChaseMaxDuration: 20
-  PermanentChaser: 0
+  PermanentChaser: 1
   PatrolPointRadius: 0.5
 --- !u!54 &7654724074574466425
 Rigidbody:
