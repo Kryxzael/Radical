@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 7372261686588276739}
   - component: {fileID: 5937900191347308088}
   - component: {fileID: 2007235747076834371}
+  - component: {fileID: 7386339436071824614}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -128,6 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTriggered: 0
+  ChaseMinDuration: 5
+  ChaseMaxDuration: 20
+  PermanentChaser: 0
+  PatrolPointRadius: 0.5
 --- !u!54 &7654724074574466425
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -257,3 +262,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MapMarkerPrefab: {fileID: 4926439475874913156, guid: 4dce1778bd8238545a6cc0946cc8e791,
     type: 3}
+--- !u!114 &7386339436071824614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654724074574466178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8978636a78be1e14298628e040cb6563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsTriggered: 0

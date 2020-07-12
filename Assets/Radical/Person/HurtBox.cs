@@ -7,34 +7,18 @@ using Assets.Radical.Management;
 using Assets.Radical.Player;
 using Assets.Radical.Triggerable;
 using UnityEngine;
-using UnityEngine.AI;
 
 namespace Assets.Radical.Person
 {
-    [RequireComponent(typeof(NavMeshAgent))]
-    public class NavChasePlayer : TriggerableComponent
+    public class HurtBox : TriggerableComponent
     {
         public const float BREAK_SHIELD_IFRAMES = 2f;
 
-
-        private PlayerController _target;
         private GameManager _gameManager;
-
-        private NavMeshAgent _nav;
 
         private void Awake()
         {
-            _target = FindObjectOfType<PlayerController>();
             _gameManager = FindObjectOfType<GameManager>();
-
-            _nav = GetComponent<NavMeshAgent>();
-
-            _nav.updateRotation = false;
-        }
-
-        protected override void UpdateTriggered()
-        {
-            _nav.SetDestination(_target.transform.position);
         }
 
         private void OnTriggerEnter(Collider other)
@@ -54,7 +38,7 @@ namespace Assets.Radical.Person
 
                 _gameManager.GameOver();
             }
-                
+
         }
     }
 }
