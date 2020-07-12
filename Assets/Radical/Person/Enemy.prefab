@@ -13,15 +13,14 @@ GameObject:
   - component: {fileID: 7654724074574466429}
   - component: {fileID: 7654724074574466430}
   - component: {fileID: 7654724074574466425}
-  - component: {fileID: 7654724074574466424}
   - component: {fileID: 7654724074574466426}
-  - component: {fileID: 7654724074574466427}
   - component: {fileID: 6081128854341319901}
   - component: {fileID: 1117764335500883111}
   - component: {fileID: 7372261686588276739}
   - component: {fileID: 5937900191347308088}
   - component: {fileID: 2007235747076834371}
   - component: {fileID: 7386339436071824614}
+  - component: {fileID: 396082215218841784}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -106,7 +105,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -2311659948842064771, guid: 5032ba5cdcb94ce4592e2c014984b610,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -129,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTriggered: 0
+  CurrentDecisionName: 
   ChaseMinDuration: 5
   ChaseMaxDuration: 20
   PermanentChaser: 0
@@ -149,23 +149,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7654724074574466424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654724074574466178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f55ce810bbf72f34488e84b459c127f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsTriggered: 0
-  UntriggeredColor: {r: 1, g: 0.75977707, b: 0, a: 1}
-  TriggeredColor: {r: 1, g: 0, b: 0, a: 1}
-  IdleAnimation: {fileID: 11400000, guid: 132ccd36e7b96304d8f87375d8af365f, type: 2}
-  WalkAnimation: {fileID: 11400000, guid: 8e4cc890a8ae43f4994850e6aed07a38, type: 2}
 --- !u!114 &7654724074574466426
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,19 +162,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTriggered: 0
---- !u!114 &7654724074574466427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7654724074574466178}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92b59616b29b30542928c99781d44e78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TriggerKey: 8
 --- !u!114 &6081128854341319901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,3 +245,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsTriggered: 0
+--- !u!114 &396082215218841784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7654724074574466178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3603c447ce02a174a8c65301581fbeab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsTriggered: 0
+  IdleAnimation: {fileID: 11400000, guid: a272d30c2fed4f24886d424e390b84d3, type: 2}
+  StunAnimation: {fileID: 11400000, guid: 1fe8dae3de043604c967a46bc094139b, type: 2}
+  ChaseAnimation: {fileID: 11400000, guid: 9ad043737c954ea41821920d6fd03f7c, type: 2}
