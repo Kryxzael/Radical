@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,10 @@ namespace Assets.Radical.Person
         public NavigationDecision CurrentDecision;
         public string CurrentDecisionName;
 
+        [Header("Stun")]
+        public float StunTime;
+        public bool IsStunned;
+
         [Header("Chase mode")]
         public float ChaseMinDuration;
         public float ChaseMaxDuration;
@@ -40,8 +45,32 @@ namespace Assets.Radical.Person
             _nav.updateRotation = false;
         }
 
+        public void Stun()
+        {
+            StartCoroutine(stopStun());
+
+            IEnumerator stopStun()
+            {
+                IsStunned = true;
+                yield return new WaitForSeconds(StunTime);
+                IsStunned = false;
+            }
+        }
+
+        public override void OnTriggered()
+        {
+            if (IsTriggered)
+                return;
+
+            base.OnTriggered();
+
+            Stun();
+        }
+
         protected override void UpdateTriggered()
         {
+            _nav.isStopped = IsStunned;
+
             if (CurrentDecision?.ShouldBreakFromDecision() != false)
             {
                 if (CurrentDecision is ChaseDecision && _patrolPoints.Length != 0 && _patrolPoints.Sum(i => i.ChanceToSelect) > 0f)

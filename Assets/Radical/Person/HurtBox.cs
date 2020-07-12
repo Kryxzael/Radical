@@ -15,14 +15,19 @@ namespace Assets.Radical.Person
         public const float BREAK_SHIELD_IFRAMES = 2f;
 
         private GameManager _gameManager;
+        private NavChasePlayer _nav;
 
         private void Awake()
         {
             _gameManager = FindObjectOfType<GameManager>();
+            _nav = GetComponent<NavChasePlayer>();
         }
 
         private void OnTriggerEnter(Collider other)
         {
+            if (_nav != null && _nav.IsStunned)
+                return;
+
             if (IsTriggered && other.GetComponent<PlayerController>() is PlayerController pl)
             {
                 if (pl.IsInvincible)

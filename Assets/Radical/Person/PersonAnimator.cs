@@ -13,6 +13,7 @@ namespace Assets.Radical.Person
     public class PersonAnimator : TriggerableComponent
     {
         private DirectionManager _directionManager;
+        private NavChasePlayer _nav;
 
         public TwosidedSpriteAnimation IdleAnimation;
         public TwosidedSpriteAnimation StunAnimation;
@@ -22,12 +23,17 @@ namespace Assets.Radical.Person
         {
             _directionManager = GetComponent<DirectionManager>();
             _directionManager.Animation = IdleAnimation;
+            _nav = GetComponent<NavChasePlayer>();
         }
 
-        public override void OnTriggered()
+        protected override void UpdateTriggered()
         {
-            base.OnTriggered();
-            _directionManager.Animation = ChaseAnimation;
+            base.UpdateTriggered();
+            if (_nav != null && _nav.IsStunned)
+                _directionManager.Animation = StunAnimation;
+
+            else
+                _directionManager.Animation = ChaseAnimation;
         }
     }
 }

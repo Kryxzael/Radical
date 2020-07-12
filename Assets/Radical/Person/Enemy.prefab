@@ -129,6 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsTriggered: 0
   CurrentDecisionName: 
+  StunTime: 1
+  IsStunned: 0
   ChaseMinDuration: 5
   ChaseMaxDuration: 20
   PermanentChaser: 0
