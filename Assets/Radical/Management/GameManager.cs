@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Assets.Radical.GUI;
 using TMPro;
 using UnityEngine;
 
@@ -16,6 +17,11 @@ namespace Assets.Radical.Management
         public int Score;
         public TMP_Text ScoreToastPrefab;
 
+        [Header("Cheer")]
+        public CheerText[] CheerLabels;
+        public int CheerScoreInterval = 1000;
+        public string[] Cheers;
+
         [Header("Lifetime")]
         public GameObject GameOverOverlayPrefab;
 
@@ -27,7 +33,15 @@ namespace Assets.Radical.Management
         /// <param name="position"></param>
         public void ProvidePoints(int points, Vector3 position)
         {
+            int previousScore = Score;
             Score += points;
+
+            //Cheer
+            if ((Score / CheerScoreInterval) > (previousScore / CheerScoreInterval) && Cheers.Length != 0 && Cheers.Length != 0)
+            {
+                CheerText candidate = CheerLabels[UnityEngine.Random.Range(0, CheerLabels.Length)];
+                candidate.Smack(Cheers[UnityEngine.Random.Range(0, Cheers.Length)]);
+            }
 
             TMP_Text toast = Instantiate(ScoreToastPrefab, position, Quaternion.identity);
             toast.text = points.ToString();
