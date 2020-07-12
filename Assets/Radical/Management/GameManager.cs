@@ -13,6 +13,9 @@ namespace Assets.Radical.Management
     {
         public bool IsGameRunning = true;
 
+        [Header("Audio")]
+        public AudioSource MusicSource;
+
         [Header("Score")]
         public int Score;
         public TMP_Text ScoreToastPrefab;
@@ -51,6 +54,8 @@ namespace Assets.Radical.Management
         {
             if (!IsGameRunning)
                 return;
+
+            MusicSource.Stop();
 
             IsGameRunning = false;
             GameObject gameOverScreen = Instantiate(GameOverOverlayPrefab, Vector2.zero, Quaternion.identity);
