@@ -587,7 +587,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.856001}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 627, y: 103}
+  m_AnchoredPosition: {x: 690, y: 24.5}
   m_SizeDelta: {x: 502.20105, y: 62.928345}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971975547
@@ -609,7 +609,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name of Game!
+  m_text: Tubular tantrum
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7661f01fbdad9a748aa04c636bf729fb, type: 2}
   m_sharedMaterial: {fileID: -6409245971054817051, guid: 7661f01fbdad9a748aa04c636bf729fb,
@@ -679,10 +679,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1971975547}
-    characterCount: 13
+    characterCount: 15
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 1
+    wordCount: 2
     linkCount: 0
     lineCount: 1
     pageCount: 1

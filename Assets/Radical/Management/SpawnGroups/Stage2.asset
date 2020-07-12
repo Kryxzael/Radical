@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2abe9fac04357c449b19c83ab11632fb, type: 3}
   m_Name: Stage2
   m_EditorClassIdentifier: 
-  Threshold: 10
+  Threshold: 5
   Prefab: {fileID: 1432703828388310581, guid: 536a5b90a8ae71d41b3e69dd9cc622f5, type: 3}

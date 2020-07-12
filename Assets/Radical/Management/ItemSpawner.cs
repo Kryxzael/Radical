@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Assets.Radical.Items;
 using Assets.Radical.Person.Nav;
 using UnityEngine;
-using UnityEngine.XR.WSA.Input;
 
 namespace Assets.Radical.Management
 {

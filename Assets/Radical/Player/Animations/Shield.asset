@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   Frames:
-  - Sprite: {fileID: 21300000, guid: 1bbc8ccf4aaf1584c9d24a00f6809ffb, type: 3}
+  - Sprite: {fileID: 2293943115700166155, guid: d1b39053a206d0c498669e55ead5e1f7,
+      type: 3}
     FrameTimeMultiplier: 1
   FrameTime: 1
   FrameTimeDivider: 60

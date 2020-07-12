@@ -8,6 +8,7 @@ using Assets.Radical.Management;
 using Assets.Radical.Person.Nav;
 using Assets.Radical.Player;
 using Assets.Radical.Triggerable;
+using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -77,7 +78,12 @@ namespace Assets.Radical.Person
 
             if (CurrentDecision?.ShouldBreakFromDecision() != false)
             {
-                if (CurrentDecision is ChaseDecision && _patrolPoints.Length != 0 && _patrolPoints.Sum(i => i.ChanceToSelect) > 0f)
+                if (PermanentChaser)
+                {
+                    CurrentDecision = new ChaseDecision(_target.transform, float.PositiveInfinity);
+                }
+
+                else if (CurrentDecision is ChaseDecision && _patrolPoints.Length != 0 && _patrolPoints.Sum(i => i.ChanceToSelect) > 0f)
                 {
                     //Create new stray
 

@@ -15,6 +15,7 @@ namespace Assets.Radical.Management
 
         [Header("Audio")]
         public AudioSource MusicSource;
+        public AudioSource HitSource;
 
         [Header("Score")]
         public int Score;
@@ -44,6 +45,7 @@ namespace Assets.Radical.Management
             {
                 CheerText candidate = CheerLabels[UnityEngine.Random.Range(0, CheerLabels.Length)];
                 candidate.Smack(Cheers[UnityEngine.Random.Range(0, Cheers.Length)]);
+                HitSource.Play();
             }
 
             TMP_Text toast = Instantiate(ScoreToastPrefab, position, Quaternion.identity);

@@ -8,6 +8,7 @@ using UnityEngine;
 namespace Assets.Radical.Player
 {
     [RequireComponent(typeof(Rigidbody), typeof(Collider), typeof(DirectionManager))]
+    [RequireComponent(typeof(AirhornController))]
     public class PlayerController : MonoBehaviour
     {
         /*
@@ -19,6 +20,7 @@ namespace Assets.Radical.Player
         private Rigidbody _rigidbody;
         private Collider _collider;
         private Renderer _renderer;
+        private AirhornController _airhornController;
         private DirectionManager _directionManager;
         private GameManager _gameManager;
 
@@ -37,12 +39,15 @@ namespace Assets.Radical.Player
         [Header("Animations")]
         public TwosidedSpriteAnimation IdleAnimation;
         public TwosidedSpriteAnimation WalkAnimation;
+        public TwosidedSpriteAnimation AirborneAnimation;
+        public TwosidedSpriteAnimation UseAttackAnimation;
 
         private void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
             _collider = GetComponent<Collider>();
             _renderer = GetComponent<Renderer>();
+            _airhornController = GetComponent<AirhornController>();
             _directionManager = GetComponent<DirectionManager>();
 
             _gameManager = FindObjectOfType<GameManager>();
@@ -79,8 +84,12 @@ namespace Assets.Radical.Player
         /// </summary>
         private void UpdateAnimation()
         {
-            //Animation
-            if (Mathf.Abs(_rigidbody.velocity.x) > 0 || Mathf.Abs(_rigidbody.velocity.z) > 0)
+            if (_airhornController.UsingAirhorn)
+                _directionManager.Animation = UseAttackAnimation;
+            else if (!_collider.OnGround())
+                _directionManager.Animation = AirborneAnimation;
+
+            else if (Mathf.Abs(_rigidbody.velocity.x) > 0 || Mathf.Abs(_rigidbody.velocity.z) > 0)
                 _directionManager.Animation = WalkAnimation;
 
             else

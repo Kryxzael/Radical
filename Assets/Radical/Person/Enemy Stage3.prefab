@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 7654724074574466178, guid: 17d222f435ed30d489583bbd3f1e7943,
         type: 3}
       propertyPath: m_Name
-      value: Enemy (2)
+      value: Enemy Stage3
       objectReference: {fileID: 0}
     - target: {fileID: 7654724074574466428, guid: 17d222f435ed30d489583bbd3f1e7943,
         type: 3}
       propertyPath: m_Speed
-      value: 4.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7654724074574466430, guid: 17d222f435ed30d489583bbd3f1e7943,
         type: 3}

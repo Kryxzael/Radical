@@ -11,10 +11,13 @@ namespace Assets.Radical.Player
     [RequireComponent(typeof(DirectionManager))]
     public class AirhornController : MonoBehaviour
     {
+        public AudioSource AirhornSound;
         public GameObject ShockwavePrefab;
         public float YOffset;
+        public bool UsingAirhorn { get; private set; }
 
         private DirectionManager _directionManager;
+
 
         private void Awake()
         {
@@ -29,11 +32,20 @@ namespace Assets.Radical.Player
 
         public void UseAirhorn()
         {
+            UsingAirhorn = true;
             Instantiate(
                 original: ShockwavePrefab, 
                 position: transform.position + Vector3.up * YOffset, 
                 rotation: Quaternion.Euler(new Vector3(0, GetLauchDirection(), 0))
             );
+            AirhornSound.Play();
+
+            Invoke(nameof(StopUsingAirhorn), 0.75f);
+        }
+
+        private void StopUsingAirhorn()
+        {
+            UsingAirhorn = false;
         }
 
         private float GetLauchDirection()

@@ -13,7 +13,16 @@ MonoBehaviour:
   m_Name: Walk_Back
   m_EditorClassIdentifier: 
   Frames:
-  - Sprite: {fileID: 7364682651488144517, guid: a03f7e046d120c948b9f492d97cda540,
+  - Sprite: {fileID: -2082058476154249889, guid: c4c0cac90ea5a4943ab4760019c94d9c,
+      type: 3}
+    FrameTimeMultiplier: 1
+  - Sprite: {fileID: -1801952175626936329, guid: c4c0cac90ea5a4943ab4760019c94d9c,
+      type: 3}
+    FrameTimeMultiplier: 1
+  - Sprite: {fileID: -2381382552646623134, guid: c4c0cac90ea5a4943ab4760019c94d9c,
+      type: 3}
+    FrameTimeMultiplier: 1
+  - Sprite: {fileID: -4335684157795745678, guid: c4c0cac90ea5a4943ab4760019c94d9c,
       type: 3}
     FrameTimeMultiplier: 1
   FrameTime: 1

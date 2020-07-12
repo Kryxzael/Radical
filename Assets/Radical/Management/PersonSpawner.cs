@@ -3,7 +3,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Assets.Radical.Person.Nav;
-using Boo.Lang.Environments;
 using UnityEngine;
 
 namespace Assets.Radical.Management

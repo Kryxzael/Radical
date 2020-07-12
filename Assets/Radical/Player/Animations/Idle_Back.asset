@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Idle_Back
   m_EditorClassIdentifier: 
   Frames:
-  - Sprite: {fileID: 7364682651488144517, guid: a03f7e046d120c948b9f492d97cda540,
+  - Sprite: {fileID: 7891982148883367678, guid: c4c0cac90ea5a4943ab4760019c94d9c,
       type: 3}
     FrameTimeMultiplier: 1
   FrameTime: 1
